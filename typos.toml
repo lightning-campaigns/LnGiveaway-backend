@@ -1,0 +1,6 @@
+[default]
+extend_identifiers = ["foo", "bar"]
+extend_words = ["baz", "qux"]
+
+[files]
+extend-exclude = [".git/", ".github/", "build/", "dist/", "venv/", "env/"]
