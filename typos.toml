@@ -1,24 +1,6 @@
-[identifiers]
-words = [
-  "foo",
-  "bar",
-  "baz",
-]
+[default]
+extend_identifiers = ["foo", "bar"]
+extend_words = ["baz", "qux"]
 
 [files]
-extensions = [
-  ".py",
-]
-
-[filters]
-excludes = [
-  ".git/",
-  ".github/",
-  "build/",
-  "dist/",
-  "venv/",
-  "node_modules/",
-]
-
-[options]
-ignore-case = true
+extend-exclude = [".git/", ".github/", "build/", "dist/", "venv/", "node_modules/"]
