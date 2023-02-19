@@ -1,6 +1,6 @@
 from flask import Blueprint, request
 
-from service.CampaignService import CampaignService
+from api.service.CampaignService import CampaignService
 
 campaign_route = Blueprint("campaign_route", __name__)
 

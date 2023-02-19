@@ -1,9 +1,7 @@
 from flask import Flask
 
-import os
-
 from application_configs import ApplicationConstant
-from route.campaign_route import campaign_route
+from api.route.campaign_route import campaign_route
 
 app = Flask(__name__)
 
