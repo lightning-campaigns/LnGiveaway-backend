@@ -1,0 +1,24 @@
+[identifiers]
+words = [
+  "foo",
+  "bar",
+  "baz",
+]
+
+[files]
+extensions = [
+  ".py",
+]
+
+[filters]
+excludes = [
+  ".git/",
+  ".github/",
+  "build/",
+  "dist/",
+  "venv/",
+  "node_modules/",
+]
+
+[options]
+ignore-case = true
