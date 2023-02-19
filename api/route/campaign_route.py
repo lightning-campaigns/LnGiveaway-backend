@@ -7,7 +7,7 @@ campaign_route = Blueprint("campaign_route", __name__)
 campaign_service = CampaignService()
 
 @campaign_route.route("/", methods = ['POST', 'GET'])
-def get_campagin():
+def get_campaign():
 
     if request.method == 'GET':
         return campaign_service.getCampaigns()
