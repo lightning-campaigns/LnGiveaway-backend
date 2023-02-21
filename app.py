@@ -7,7 +7,6 @@ from api.helper.application_configs import ApplicationConstant
 from api.route.campaign_route import campaign_route
 
 app = Flask(__name__)
-# app.config.from_pyfile('api/helper/database_config.py')
 app.config['SQLALCHEMY_DATABASE_URI'] = ApplicationConstant.sqlalchemy_database_uri
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = ApplicationConstant.sqlalchemy_track_modifications
 

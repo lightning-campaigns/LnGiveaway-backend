@@ -5,10 +5,10 @@ services:
     platform: linux/amd64
     build: .
     container_name: ln_giveaway_backend
-    command: ./entrypoint.sh
+    entrypoint: [ '/usr/src/app/entrypoint.sh' ]
     restart: on-failure
     volumes:
-      - ./:/usr/src/app/
+      - '.:/usr/src/app'
     env_file:
       - ./.env
     depends_on:
@@ -25,7 +25,7 @@ services:
       - SQLALCHEMY_TRACK_MODIFICATIONS=False
 
   ln_giveaway_db:
-    image: postgres
+    image: postgres@sha256:e068265a30d0234f03fdc1b0f7d76a59ee0ad1828db578978a9bf41c46eaa86b
     container_name: ln_giveaway_db
     restart: on-failure
     environment:

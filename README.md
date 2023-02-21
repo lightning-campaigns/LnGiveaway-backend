@@ -3,7 +3,7 @@
 
 ## Start App
 ```
-chmod -R 765 entrypoint.sh 
+chmod 765 entrypoint.sh 
 ```
 ```
 docker-compose up -d 

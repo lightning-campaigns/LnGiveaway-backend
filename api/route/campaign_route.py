@@ -1,7 +1,5 @@
 from flask import Blueprint, request
-from flask_sqlalchemy import SQLAlchemy
 
-from api.model.Campaign import CampaignModel
 from api.service.CampaignService import CampaignService
 
 
