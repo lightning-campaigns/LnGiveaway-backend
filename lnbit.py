@@ -4,7 +4,7 @@ from urllib.parse import urlparse, parse_qs
 import requests
 import json
 
-from application_configs import ApplicationConstant
+from api.helper.application_configs import ApplicationConstant
 
 
 class LNbits():

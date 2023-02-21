@@ -6,4 +6,4 @@ __pycache__/
 tmp/
 test.py
 images/
-docker/
+data/

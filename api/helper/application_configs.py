@@ -14,3 +14,5 @@ class ApplicationConstant:
     send_withdrawal_link = os.environ['SEND_WITHDRAWAL_AS_LINK']
     send_withdrawal_photo = os.environ['SEND_WITHDRAWAL_AS_PHOTO']
     port = os.environ['PORT']
+    sqlalchemy_database_uri = os.environ['SQLALCHEMY_DATABASE_URI']
+    sqlalchemy_track_modifications = os.environ['SQLALCHEMY_TRACK_MODIFICATIONS']

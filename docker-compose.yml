@@ -1,0 +1,39 @@
+version: '3.9'
+
+services:
+  ln_giveaway_backend:
+    platform: linux/amd64
+    build: .
+    container_name: ln_giveaway_backend
+    entrypoint: [ '/usr/src/app/entrypoint.sh' ]
+    restart: on-failure
+    volumes:
+      - '.:/usr/src/app'
+    env_file:
+      - ./.env
+    depends_on:
+      - ln_giveaway_db
+    ports:
+      - 6000:6000
+    environment:
+      - CONSUMER_KEY=${CONSUMER_KEY}
+      - CONSUMER_SECRET=${CONSUMER_SECRET}
+      - ACCESS_KEY=${ACCESS_KEY}
+      - ACCESS_SECRET=${ACCESS_SECRET}
+      - LN_API_KEY=${LN_API_KEY}
+      - SQLALCHEMY_DATABASE_URI=postgresql://ln_giveaway:ln_giveaway@ln_giveaway_db:5432/ln_giveaway_dev
+      - SQLALCHEMY_TRACK_MODIFICATIONS=False
+
+  ln_giveaway_db:
+    image: postgres@sha256:e068265a30d0234f03fdc1b0f7d76a59ee0ad1828db578978a9bf41c46eaa86b
+    container_name: ln_giveaway_db
+    restart: on-failure
+    environment:
+      - POSTGRES_PASSWORD=ln_giveaway
+      - POSTGRES_USER=ln_giveaway
+      - POSTGRES_DB=ln_giveaway_dev
+    volumes:
+#      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+      - ./data/pgdata:/var/lib/postgresql/data
+    ports:
+      - 5432:5432

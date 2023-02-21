@@ -2,6 +2,7 @@ from flask import Blueprint, request
 
 from api.service.CampaignService import CampaignService
 
+
 campaign_route = Blueprint("campaign_route", __name__)
 
 campaign_service = CampaignService()
@@ -10,7 +11,8 @@ campaign_service = CampaignService()
 def get_campaign():
 
     if request.method == 'GET':
-        return campaign_service.getCampaigns()
+        campaigns = campaign_service.getCampaigns()
+        return campaigns
 
     if request.method == 'POST':
         data = request.json
